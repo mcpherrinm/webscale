@@ -1,0 +1,43 @@
+                    A Modern Approach to Using C++ Libraries
+                    ========================================
+
+  As applications grow, they typically are split across a large number of
+libraries and files.  C and C++ provide very little mechanisms for dealing with
+these large programs.  Typically, you have a header which is included basically
+by copy-paste and libraries that get linked in at the end.
+
+  The classic way to ensure all your libraries are ready to be built is with
+the venerable Unix tool `make`.  This approach works quite well, but there are
+two main drawbacks.  The first is that NOT DISTRIBUTED.  The second is BUILDING
+THIRD PARTY CODE. CAUSE THE CLOUD? XXX TODO
+
+  Modern languages take slightly different approaches.  Module systems,
+prebuilt binaries, and central package repositories are all features of current
+language ecosystems.  Centralized approaches like CPAN and npm are good, but
+Go has one of the most interesting approaches.  You can import directly from a
+remote git repository!  As a C++ developer, I wanted it.
+
+  Of course, having everyone compiling each library from source everywhere is a
+massive waste of computational power, and in the modern cloud-oriented tech
+environment, we can do a lot better.
+
+
+                    Simple Distributed Compilation with HTTP
+                    ----------------------------------------
+
+ * Includes
+
+  XXX  #include "http://mcpherrin.ca/code/example.h"
+  Good for header only libraries, or as a regular header
+  Always up to date!  No compiler changes needed! Works today!
+
+ * Weblinker
+
+  LDFLAGS -Lhttp://mcpherrin.ca/binary/linux/x86_64 -lexample
+Serve binaries from the source.  Show sample make.cgi that builds & serves
+
+ * Build Proxy
+
+  What if the person providing the package has no build for you?  Well that is
+simple: http proxy that compiles.  Can 302 redirect etc to a build farm node.
+Show sample code for compiler-proxy-farm
