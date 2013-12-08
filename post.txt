@@ -1,4 +1,4 @@
-                    A Modern Approach to Using C++ Libraries
+                        A Modern Approach to Compilation
                     ========================================
 
   As applications grow, they typically are split across a large number of
@@ -9,7 +9,7 @@ by copy-paste and libraries that get linked in at the end.
   The classic way to ensure all your libraries are ready to be built is with
 the venerable Unix tool `make`.  This approach works quite well, but there are
 two main drawbacks.  The first is that NOT DISTRIBUTED.  The second is BUILDING
-THIRD PARTY CODE. CAUSE THE CLOUD? XXX TODO
+THIRD PARTY CODE. BECAUSE THE CLOUD?
 
   Modern languages take slightly different approaches.  Module systems,
 prebuilt binaries, and central package repositories are all features of current
