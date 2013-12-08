@@ -40,7 +40,10 @@ int open(const char* path, int flags, ...) {
     FILE* f = fopen(template, "w");
     assert(f);
     curl_easy_setopt(h, CURLOPT_WRITEDATA, f);
-    curl_easy_perform(h);
+    CURLcode ret = curl_easy_perform(h);
+    if( ret != 0 ) {
+      return -1;
+    }
     curl_easy_cleanup(h);
     fclose(f);
     return real_open(template, flags, mode);
